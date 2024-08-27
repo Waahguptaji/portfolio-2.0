@@ -18,9 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={`${inter.className} mx-24 h-full`}>
-        <div className="min-h-screen bg-[url('/assets/bg.png')] bg-cover bg-center">
+        <div className="min-h-screen w-full dark:bg-black bg-white  dark:bg-dot-white/[0.4] bg-dot-black/[0.4] relative flex flex-col items-center justify-center">
+          <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
           <Header />
-          {children}
+          <main className="flex-grow z-10 w-full">{children}</main>
         </div>
       </body>
     </html>

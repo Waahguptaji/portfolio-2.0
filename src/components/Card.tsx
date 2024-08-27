@@ -8,8 +8,9 @@ interface CardProps {
   label: string;
   labelColor: string;
   rotation: string;
-  borderColor?: string; // Optional border color
-  borderWidth?: string; // Optional border width
+  skills: string[];
+  borderColor?: string;
+  borderWidth?: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -19,21 +20,29 @@ const Card: React.FC<CardProps> = ({
   label,
   labelColor,
   rotation,
-  borderColor = "border-black", // Default border color
-  borderWidth = "border-2", // Default border width
+  skills,
+  borderColor = "border-black",
+  borderWidth = "border-2",
 }) => {
   return (
     <div
-      className={`p-4 w-[268px] h-[300px] transform ${rotation} rounded-lg shadow-lg relative ${backgroundColor} ${borderColor} ${borderWidth}`}
+      className={`p-4 w-[300px] h-[400px] transform ${rotation} rounded-lg shadow-lg relative flex-grow ${backgroundColor} ${borderColor} ${borderWidth}`}
     >
       <span
         className={`absolute top-0 left-0 m-2 px-2 py-1 text-xs rounded ${labelColor}`}
       >
         {label}
       </span>
-      <div className="mt-20 ml-2">
-        <Image src={icon} alt="arrow" width={40} height={55} />
-        <h3 className="text-black text-2xl text-left mt-4">{title}</h3>
+      <div className="mt-12 ml-2">
+        <Image src={icon} alt="icon" width={40} height={40} />
+        <h3 className="text-black text-2xl text-left mt-4 mb-4">{title}</h3>
+        <ul className="list-disc list-inside">
+          {skills.map((skill, index) => (
+            <li key={index} className="text-sm text-left">
+              {skill}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
