@@ -38,6 +38,9 @@ module.exports = {
       );
     },
   ],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 };
 
 function addVariablesForColors({ addBase, theme }: any) {

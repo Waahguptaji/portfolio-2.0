@@ -1,18 +1,18 @@
-import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
+import MyWork from "@/components/Projects";
+import Services from "@/components/Services";
 import Skills from "@/components/Skills";
-import WorkEx from "@/components/WorkEx";
 
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <Skills />
-      <Projects />
-      <WorkEx />
-      <ContactMe />
+      <div className="flex flex-col  space-y-32 ">
+        <Hero />
+        <Services />
+        <Skills />
+        <MyWork />
+      </div>
       <Footer />
     </main>
   );

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { RoughNotation } from "react-rough-notation";
 import AnimatedSectionWrapper from "../AnimatedSectionWrapper";
+import SocialIcons from "../SocialIcons";
 
 const Hero = () => {
   const [isStruckThrough, setIsStruckThrough] = useState(false);
@@ -17,8 +18,8 @@ const Hero = () => {
 
   return (
     <AnimatedSectionWrapper id="Home">
-      <section id="hero" className="min-h-screen flex flex-col gap-20">
-        <div className="ml-10 flex items-center mb-5">
+      <section id="hero" className=" md:flex md:flex-col md:gap-16 md:mb-16">
+        <div className="ml-10 flex items-center my-5">
           <Image
             src="/assets/profile.png"
             alt="Avatar"
@@ -32,29 +33,37 @@ const Hero = () => {
               alt="arrow"
               width={57}
               height={45}
+              className="dark:hidden"
+            />
+            <Image
+              src="/assets/dark/darkArrow.png"
+              alt="arrow"
+              width={57}
+              height={45}
+              className="hidden dark:block"
             />
           </span>
-          <span className="text-2xl transform -rotate-6 text-start ml-5 mb-7 logo-font text-black">
+          <span className="text-2xl transform -rotate-6 text-start ml-5 mb-7 logo-font text-black dark:text-white">
             <RoughNotation
               type="highlight"
               strokeWidth={3}
               show={true}
-              color="pink"
+              color="var(--highlight-color)"
             >
               sahil
             </RoughNotation>
           </span>
         </div>
 
-        <div className="flex justify-between">
-          <div className="text-6xl ml-4 font-semibold leading-tight text-black relative">
+        <div className="flex flex-col md:flex md:flex-row md:justify-between">
+          <div className="text-6xl ml-4 font-semibold leading-tight text-black dark:text-white relative">
             I{" "}
             <RoughNotation
               animationDelay={1000}
               type="circle"
               strokeWidth={4}
               show={true}
-              color="pink"
+              color="var(--highlight-color)"
             >
               <span className="px-2">create</span>
             </RoughNotation>{" "}
@@ -63,7 +72,7 @@ const Hero = () => {
             web{" "}
             <span className="relative inline-block">
               <div
-                className={`relative  transition-all duration-500 ${
+                className={`relative transition-all duration-500 ${
                   isStruckThrough ? "translate-y-[40px] opacity-0" : ""
                 }`}
               >
@@ -72,14 +81,14 @@ const Hero = () => {
                   type="strike-through"
                   strokeWidth={4}
                   show={true}
-                  color="black"
+                  color="var(--strikeoff)"
                   animate={true}
                 >
-                  <span>sites</span>
+                  <span className="text-black dark:text-white">sites</span>
                 </RoughNotation>
               </div>
               <span
-                className={`absolute left-0 top-0 transition-opacity duration-500 ${
+                className={`absolute left-0 top-0 transition-opacity duration-500 text-black dark:text-white ${
                   isStruckThrough ? "opacity-100" : "opacity-0"
                 }`}
               >
@@ -88,12 +97,12 @@ const Hero = () => {
             </span>
           </div>
           <div className="flex flex-col gap-2">
-            <p className="mb-4 font-light text-justify text-2xl max-w-lg">
+            <p className="mb-4 font-light text-justify text-2xl max-w-lg text-black dark:text-white">
               With expertise in{" "}
               <RoughNotation
                 type="box"
                 animationDelay={3000}
-                color="pink"
+                color="var(--highlight-color)"
                 strokeWidth={3}
                 padding={2}
                 show={true}
@@ -104,7 +113,7 @@ const Hero = () => {
               <RoughNotation
                 animationDelay={3500}
                 type="box"
-                color="pink"
+                color="var(--highlight-color)"
                 strokeWidth={3}
                 padding={2}
                 show={true}
@@ -115,7 +124,7 @@ const Hero = () => {
               <RoughNotation
                 animationDelay={3900}
                 type="underline"
-                color="pink"
+                color="var(--highlight-color)"
                 strokeWidth={2}
                 padding={3}
                 show={true}
@@ -124,9 +133,10 @@ const Hero = () => {
               </RoughNotation>{" "}
               websites and web applications.
             </p>
-            <button className="bg-black btn btn-neutral w-40 rounded-none text-white">
+            <button className="mb-5 bg-black dark:bg-white dark:text-black btn btn-neutral w-40 rounded-none text-white">
               Hire me
             </button>
+            <SocialIcons />
           </div>
         </div>
       </section>

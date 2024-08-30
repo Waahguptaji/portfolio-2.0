@@ -4,15 +4,44 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Handlee&family=League+Spartan:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --highlight-color: pink;
+  --strikeoff-color: black;
+}
+
+.dark {
+  --highlight-color: #9932cc;
+  --strikeoff-color: white;
+}
+
 .logo-font {
   font-family: "Handlee", cursive;
   font-weight: 700;
   font-style: normal;
 }
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+.icon-container {
+  display: inline-flex;
+  padding: 12px;
+  font-size: 20px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #000;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+.icon-container:hover {
+  transform: translateY(-5px) scale(1); /* Bounces up */
+  color: #4b5563; /* Dark grey on hover */
+  background-color: #e5e7eb; /* Slightly darker grey on hover */
 }
