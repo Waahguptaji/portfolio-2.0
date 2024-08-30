@@ -5,7 +5,6 @@ import { RoughNotation } from "react-rough-notation";
 import AnimatedSectionWrapper from "@/components/AnimatedSectionWrapper";
 import Footer from "@/components/Footer";
 
-// Define the Experience type
 type Experience = {
   id: number;
   role: string;
@@ -56,8 +55,8 @@ const WorkEx = () => {
   return (
     <>
       <AnimatedSectionWrapper id="Experience">
-        <section className="flex justify-between ml-10 mb-10 ">
-          <div className="space-y-4 my-36  dark:text-white">
+        <section className="flex flex-col md:flex-row justify-between px-4 md:ml-10 mb-10">
+          <div className="space-y-4 my-12 md:my-36 dark:text-white">
             <div className="text-2xl logo-font inline-block mb-4">
               <RoughNotation
                 type="highlight"
@@ -68,32 +67,32 @@ const WorkEx = () => {
                 Work Experience
               </RoughNotation>
             </div>
-            <div>
-              <Image
-                src="/assets/arrowe.png"
-                alt="arrow"
-                width={57}
-                height={45}
-                className="transform rotate-[230deg] mb-8 relative left-20 dark:hidden"
-              />
-              <Image
-                src="/assets/dark/darkArrow.png"
-                alt="arrow"
-                width={57}
-                height={45}
-                className="transform rotate-[230deg] mb-8 relative left-20 hidden dark:block"
-              />
-            </div>
+
+            <Image
+              src="/assets/arrowe.png"
+              alt="arrow"
+              width={57}
+              height={45}
+              className="transform rotate-[230deg] mb-8 relative left-20 dark:hidden"
+            />
+            <Image
+              src="/assets/dark/darkArrow.png"
+              alt="arrow"
+              width={57}
+              height={45}
+              className="transform rotate-[230deg] mb-8 relative left-20 hidden dark:block"
+            />
+
             <p className="mb-6 text-gray-600 dark:text-gray-300 max-w-xs">
               Have been coding for 4 years.
             </p>
           </div>
 
-          <div className="relative max-w-3xl p-6 ">
+          <div className="relative max-w-3xl w-full md:p-6">
             <div className="absolute top-10 left-0 w-full h-[2px] bg-black dark:bg-white"></div>
-            <div className="absolute top-0 left-10 w-[2px] h-full bg-black dark:bg-white"></div>
+            <div className="absolute top-0 left-4 md:left-10 w-[2px] h-full bg-black dark:bg-white"></div>
 
-            <div className="mx-[90px] my-10 py-[50px]">
+            <div className="md:mx-[90px] my-10 py-[50px] w-full">
               {experiences.map(
                 ({
                   id,
@@ -105,20 +104,23 @@ const WorkEx = () => {
                   description,
                   borderColor,
                 }) => (
-                  <div key={id} className="flex items-center mb-6">
+                  <div
+                    key={id}
+                    className="flex gap-4 p-6 md:flex-row items-start md:items-center mb-8 md:mb-6"
+                  >
                     <div
-                      className={`flex-shrink-0 w-20 h-20 ${bgColor} rounded-lg flex items-center justify-center text-5xl text-center logo-font border-2 ${borderColor}`}
+                      className={`flex-shrink-0 w-10 h-10 md:w-20 md:h-20 ${bgColor} rounded-lg flex items-center justify-center text-2xl md:text-5xl text-center logo-font border-2 ${borderColor} mb-2 md:mb-0`}
                     >
                       {id}
                     </div>
-                    <div className="ml-6">
-                      <h3 className="font-normal text-xl text-black dark:text-white">
+                    <div className="md:ml-6">
+                      <h3 className="font-normal text-base md:text-xl text-black dark:text-white">
                         {role} at <span className="font-bold">{company}</span>
                       </h3>
-                      <p className="font-light text-base text-gray-800 dark:text-gray-200">
+                      <p className="font-light text-sm md:text-base text-gray-800 dark:text-gray-200 mt-1 md:mt-0">
                         {description}
                       </p>
-                      <p className="text-gray-500 dark:text-gray-400 font-medium text-sm">
+                      <p className="text-gray-500 dark:text-gray-400 font-medium text-xs md:text-sm mt-1 md:mt-0">
                         {sdate} - {edate}
                       </p>
                     </div>
@@ -127,7 +129,7 @@ const WorkEx = () => {
               )}
             </div>
 
-            <div className="absolute top-0 right-10 w-[2px] h-full bg-black dark:bg-white"></div>
+            <div className="absolute top-0 right-4 md:right-10 w-[2px] h-full bg-black dark:bg-white"></div>
             <div className="absolute bottom-10 left-0 w-full h-[2px] bg-black dark:bg-white"></div>
           </div>
         </section>

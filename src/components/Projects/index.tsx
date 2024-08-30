@@ -3,7 +3,8 @@ import React from "react";
 import Image from "next/image";
 import { RoughNotation } from "react-rough-notation";
 import AnimatedSectionWrapper from "../AnimatedSectionWrapper";
-import { motion } from "framer-motion"; // Import Framer Motion
+import { motion } from "framer-motion";
+import { Github, ExternalLink } from "lucide-react";
 
 interface Project {
   title: string;
@@ -11,15 +12,19 @@ interface Project {
   tag: string;
   tagColor: string;
   borderColor: string;
+  liveLink: string;
+  githubLink: string;
 }
 
 const projects: Project[] = [
   {
     title: "Rush Bite - Food Delivery App",
     image: "/assets/projects/rush-bite.png",
-    tag: "React & Tailwind CSS",
+    tag: "React & Redux",
     tagColor: "bg-blue-400 dark:bg-blue-600",
     borderColor: "border-blue-500 dark:border-blue-700",
+    liveLink: "https://rushbite.vercel.app/",
+    githubLink: "https://github.com/Waahguptaji/Rush-Bite",
   },
   {
     title: "Hooked - Online Music App",
@@ -27,6 +32,8 @@ const projects: Project[] = [
     tag: "React & Spotify API",
     tagColor: "bg-green-400 dark:bg-green-600",
     borderColor: "border-green-500 dark:border-green-700",
+    liveLink: "https://hooked.vercel.app/",
+    githubLink: "https://github.com/Waahguptaji/hooked-app",
   },
   {
     title: "Pixel Technology Website",
@@ -34,13 +41,17 @@ const projects: Project[] = [
     tag: "Next.js ",
     tagColor: "bg-pink-400 dark:bg-pink-600",
     borderColor: "border-pink-500 dark:border-pink-700",
+    liveLink: "https://pixeltechnology.in/",
+    githubLink: "https://github.com/Waahguptaji/pixel-tech-website-revamp",
   },
   {
-    title: "Color System for App",
-    image: "/color-system.png",
-    tag: "UI Design",
+    title: "Weather App",
+    image: "/assets/projects/weather-app.png",
+    tag: "React & Weather API",
     tagColor: "bg-yellow-400 dark:bg-yellow-600",
     borderColor: "border-yellow-500 dark:border-yellow-700",
+    liveLink: "https://weather-app-iota-gilt-56.vercel.app/",
+    githubLink: "https://github.com/Waahguptaji/weather-app",
   },
 ];
 
@@ -88,11 +99,11 @@ const MyWork = () => {
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                className="bg-white dark:bg-gray-700 rounded-[4px] shadow-md border border-gray-300 dark:border-gray-600 overflow-hidden transition-all duration-300"
+                className="bg-white dark:bg-gray-700 rounded-[4px] shadow-md border border-gray-300 dark:border-gray-600 overflow-hidden transition-all duration-300 relative group"
                 whileHover={{
                   scale: 1.05,
                   boxShadow: "0px 12px 20px rgba(0, 0, 0, 0.15)",
-                }} // Scale and shadow on hover
+                }}
                 transition={{ duration: 0.3, type: "spring", stiffness: 200 }}
               >
                 <div className="flex justify-center items-center p-2">
@@ -104,6 +115,24 @@ const MyWork = () => {
                       objectFit="cover"
                       className="rounded-t-[4px]"
                     />
+                    <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white mx-2 hover:text-blue-400 transition-colors duration-300"
+                      >
+                        <ExternalLink size={24} />
+                      </a>
+                      <a
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white mx-2 hover:text-blue-400 transition-colors duration-300"
+                      >
+                        <Github size={24} />
+                      </a>
+                    </div>
                   </div>
                 </div>
                 <div className="flex p-4 gap-2 justify-between items-center">

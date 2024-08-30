@@ -21,22 +21,36 @@ const Footer = () => {
         />
         <span className="logo-font text-xl dark:text-white">sahil</span>
       </div>
-
       {/* Center Section - Social Links */}
       <div className="flex flex-col md:items-center gap-4 md:ml-4 ">
         <div className="flex items-center gap-4">
-          <button className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font">
+          <a
+            href="https://twitter.com/waahguptaji"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font hover:opacity-80 transition-opacity"
+          >
             Twitter X
-          </button>
-          <button className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font">
+          </a>
+          <a
+            href="https://www.linkedin.com/in/waahguptaji"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font hover:opacity-80 transition-opacity"
+          >
             LinkedIn
-          </button>
-          <button className="bg-black text-white  dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font">
+          </a>
+          <a
+            href="https://www.instagram.com/waahguptaji"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font hover:opacity-80 transition-opacity"
+          >
             Instagram
-          </button>
+          </a>
         </div>
-        <div className="text-black text-base  dark:text-white md:text-sm">
-          Copyright. Portfolio 2024
+        <div className="text-black text-base dark:text-white md:text-sm">
+          Copyright © Portfolio {new Date().getFullYear()}
         </div>
       </div>
     </footer>

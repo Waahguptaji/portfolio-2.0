@@ -10,8 +10,8 @@ import Footer from "@/components/Footer";
 const AboutMe = () => {
   return (
     <AnimatedSectionWrapper id="About">
-      <div className="min-h-screen grid grid-cols-2 justify-between ml-10 w-full">
-        <div className="space-y-4 ">
+      <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 justify-between md:ml-10 w-full">
+        <div className="space-y-4 my-12 ">
           <div className="text-2xl logo-font inline-block mb-4">
             <RoughNotation
               type="highlight"
@@ -48,13 +48,13 @@ const AboutMe = () => {
                 alt="My Photo"
                 width={350}
                 height={400}
-                className="rounded-box object-cover" // Ensure the image covers the box
+                className="rounded-box object-cover h-[470px] md:w-[350px] md:h-[400px]" // Ensure the image covers the box
               />
             </motion.div>
           </div>
         </div>
         <div className="flex flex-col">
-          <p className="mt-24 text-lg text-gray-600 dark:text-gray-300 max-w-3xl leading-relaxed">
+          <p className="mt-6 md:mt-24 text-lg text-gray-600 dark:text-gray-300 max-w-3xl leading-relaxed">
             <RoughNotationGroup show={true}>
               Hi, I’m{" "}
               <RoughNotation
@@ -66,7 +66,7 @@ const AboutMe = () => {
                   Sahil Gupta
                 </span>
               </RoughNotation>
-              , a passionate{" "}
+              , a passionate{"  "} <br className=" block md:hidden" />
               <RoughNotation type="highlight" color="var(--highlight-color)">
                 <span className="font-bold text-black dark:text-white">
                   Full Stack Developer
