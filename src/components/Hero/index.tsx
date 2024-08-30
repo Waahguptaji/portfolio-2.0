@@ -18,14 +18,17 @@ const Hero = () => {
 
   return (
     <AnimatedSectionWrapper id="Home">
-      <section id="hero" className=" md:flex md:flex-col md:gap-16 md:mb-16">
-        <div className="ml-10 flex items-center my-5">
+      <section
+        id="hero"
+        className=" flex flex-col gap-16 mb-16 mt-20 md:mt-0  "
+      >
+        <div className="flex items-center ml-0 md:my-5  md:ml-10 ">
           <Image
             src="/assets/profile.png"
             alt="Avatar"
             width={112}
             height={106}
-            className="transform -rotate-6"
+            className="transform -rotate-6 w-36 h-36 md:w-28 md:h-[106px]"
           />
           <span>
             <Image
@@ -43,7 +46,7 @@ const Hero = () => {
               className="hidden dark:block"
             />
           </span>
-          <span className="text-2xl transform -rotate-6 text-start ml-5 mb-7 logo-font text-black dark:text-white">
+          <span className="text-2xl transform -rotate-6 text-start ml-5 mb-7 logo-font text-black dark:text-white -z-10">
             <RoughNotation
               type="highlight"
               strokeWidth={3}
@@ -55,8 +58,8 @@ const Hero = () => {
           </span>
         </div>
 
-        <div className="flex flex-col md:flex md:flex-row md:justify-between">
-          <div className="text-6xl ml-4 font-semibold leading-tight text-black dark:text-white relative">
+        <div className="flex flex-col gap-4 md:flex md:flex-row md:justify-between">
+          <div className="text-4xl md:text-6xl md:ml-4 font-semibold leading-tight text-black dark:text-white relative">
             I{" "}
             <RoughNotation
               animationDelay={1000}
@@ -97,7 +100,7 @@ const Hero = () => {
             </span>
           </div>
           <div className="flex flex-col gap-2">
-            <p className="mb-4 font-light text-justify text-2xl max-w-lg text-black dark:text-white">
+            <p className="text-[18px] mb-4 font-light text-justify md:text-2xl max-w-lg text-black dark:text-white">
               With expertise in{" "}
               <RoughNotation
                 type="box"

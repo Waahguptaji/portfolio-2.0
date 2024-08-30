@@ -49,9 +49,9 @@ const MyWork = () => {
     <AnimatedSectionWrapper id="Projects">
       <section
         id="Projects"
-        className="min-h-screen flex justify-between ml-10"
+        className="min-h-screen flex flex-col md:flex-row justify-between"
       >
-        <div className="flex flex-col gap-2 my-36">
+        <div className="flex flex-col gap-2 ">
           <div className="text-2xl logo-font inline-block mb-4 text-black dark:text-white">
             <RoughNotation
               type="highlight"

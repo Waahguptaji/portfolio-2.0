@@ -6,13 +6,11 @@ import AnimatedSectionWrapper from "../AnimatedSectionWrapper";
 import { motion } from "framer-motion";
 import { RoughNotation } from "react-rough-notation";
 
-type Props = {};
-
-const Skills = (props: Props) => {
+const Skills = () => {
   return (
     <AnimatedSectionWrapper id="Skills">
-      <section id="skills" className="flex flex-col space-y-4 ml-4">
-        <div className="ml-16">
+      <section id="skills" className="flex flex-col space-y-4">
+        <div className="">
           <div className="text-2xl logo-font inline-block mb-4 text-black dark:text-white">
             <RoughNotation
               type="highlight"
@@ -41,7 +39,7 @@ const Skills = (props: Props) => {
           </div>
         </div>
         <motion.div
-          className="flex flex-grow gap-4 space-x-5"
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
