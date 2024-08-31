@@ -30,7 +30,7 @@ const Card: React.FC<CardProps> = ({
     <motion.div
       whileHover={{ rotate: 0, scale: 1.05 }}
       initial={{ rotate: parseFloat(rotation.match(/-?\d+/)?.[0] ?? "0") }} // Keeps initial rotation
-      className={`p-4 w-[300px] h-[400px] rounded-lg shadow-lg relative flex-grow ${backgroundColor} ${borderColor} ${borderWidth} transform ${rotation} transition-transform`}
+      className={`p-4 w-[250px] h-[400px] md:w-[300px] md:h-[400px] rounded-lg shadow-lg relative flex-grow -rotate-12 ${backgroundColor} ${borderColor} ${borderWidth} transform ${rotation} transition-transform`}
     >
       <span
         className={`absolute top-0 left-0 m-2 px-2 py-1 text-xs rounded ${labelColor}`}

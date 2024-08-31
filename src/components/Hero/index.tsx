@@ -91,7 +91,7 @@ const Hero = () => {
                 </RoughNotation>
               </div>
               <span
-                className={`absolute left-0 top-0 transition-opacity duration-500 text-black dark:text-white ${
+                className={`absolute mr-4 left-0 top-0 transition-opacity duration-500 text-black dark:text-white ${
                   isStruckThrough ? "opacity-100" : "opacity-0"
                 }`}
               >

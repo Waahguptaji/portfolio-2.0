@@ -13,7 +13,7 @@ const Footer = () => {
           className="block dark:hidden"
         />
         <Image
-          src="/assets/darkLogo.png"
+          src="/assets/dark/darkLogo.png"
           alt="logo"
           width={25}
           height={29}
@@ -22,13 +22,13 @@ const Footer = () => {
         <span className="logo-font text-xl dark:text-white">sahil</span>
       </div>
       {/* Center Section - Social Links */}
-      <div className="flex flex-col md:items-center gap-4 md:ml-4 ">
+      <div className="flex flex-col md:items-center gap-4 mx-4 md:ml-4 ">
         <div className="flex items-center gap-4">
           <a
             href="https://twitter.com/waahguptaji"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font hover:opacity-80 transition-opacity"
+            className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-sm md:text-base logo-font hover:opacity-80 transition-opacity"
           >
             Twitter
           </a>
@@ -36,7 +36,7 @@ const Footer = () => {
             href="https://www.linkedin.com/in/waahguptaji"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font hover:opacity-80 transition-opacity"
+            className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-sm md:text-baselogo-font hover:opacity-80 transition-opacity"
           >
             LinkedIn
           </a>
@@ -44,7 +44,7 @@ const Footer = () => {
             href="https://www.instagram.com/waahguptaji"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font hover:opacity-80 transition-opacity"
+            className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-sm md:text-base logo-font hover:opacity-80 transition-opacity"
           >
             Instagram
           </a>
