@@ -30,7 +30,7 @@ const WhatIDo = () => {
               className="dark:hidden"
             />
             <Image
-              src="/assets/dark/darkfrontend.png"
+              src="/assets/dark/darkFrontend.png"
               alt="Frontend"
               width={64}
               height={64}
@@ -54,7 +54,7 @@ const WhatIDo = () => {
               className="dark:hidden"
             />
             <Image
-              src="/assets/dark/darkbackend.png"
+              src="/assets/dark/darkBackend.png"
               alt="Backend"
               width={64}
               height={64}
@@ -78,7 +78,7 @@ const WhatIDo = () => {
               className="dark:hidden"
             />
             <Image
-              src="/assets/dark/darkconquer.png"
+              src="/assets/dark/darkConquer.png"
               alt="Full Stack Development"
               width={64}
               height={64}
