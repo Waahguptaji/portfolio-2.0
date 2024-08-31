@@ -89,7 +89,9 @@ const MyWork = () => {
               className="transform rotate-[230deg] mb-8 relative left-20 hidden dark:block"
             />
           </div>
+
           <p className="mb-6 text-gray-600 dark:text-gray-300 max-w-xs">
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
             Here are a few highlights from over 20 projects I've worked on.
           </p>
         </div>

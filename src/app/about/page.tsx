@@ -94,6 +94,7 @@ const AboutMe = () => {
 
           <p className="my-5 text-lg text-gray-600 dark:text-gray-300 max-w-3xl leading-relaxed">
             <RoughNotationGroup show={true}>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
               Throughout my career, I've gained hands-on experience in
               developing and maintaining scalable solutions. I excel at{" "}
               <RoughNotation
