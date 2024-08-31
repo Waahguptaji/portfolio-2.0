@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio Website
 
-## Getting Started
+A portfolio showcasing my skills, experiences, and projects as a Full Stack Developer. Built with a focus on creating engaging, pixel-perfect web applications.
 
-First, run the development server:
+## Live Site
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Visit the live site at [waahguptaji.tech](https://waahguptaji.tech)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Responsive Design:** Optimized for all devices.
+- **Dark Mode:** Toggle between light and dark themes.
+- **Animations:** Interactive effects using Framer Motion and Rough Notation.
+- **Dynamic Content:** Skills, projects, and experiences rendered dynamically.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Technologies
 
-## Learn More
+- **Frontend:** Next.js, React.js, TypeScript, Tailwind CSS, DaisyUI
+- **Animations:** Framer Motion, Rough Notation
+- **Tools:** Git, GitHub, Azure DevOps, Postman, Figma
 
-To learn more about Next.js, take a look at the following resources:
+### Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+.
+├── components
+│ ├── Header.tsx
+│ ├── Hero.tsx
+│ ├── Skills.tsx
+│ ├── WhatIDo.tsx
+│ ├── Projects.tsx
+│ ├── WorkEx.tsx
+│ └── ContactMe.tsx
+├── pages
+│ ├── index.tsx
+│ ├── about.tsx
+│ ├── experience.tsx
+│ ├── blogs.tsx
+│ └── contact.tsx
+├── public
+│ ├── assets
+│ │ ├── light
+│ │ └── dark
+│ └── resume.pdf
+├── styles
+│ ├── globals.css
+│ └── tailwind.css
+├── .env.local
+├── next.config.js
+├── tailwind.config.js
+└── README.md
