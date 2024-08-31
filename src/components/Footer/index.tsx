@@ -30,7 +30,7 @@ const Footer = () => {
             rel="noopener noreferrer"
             className="bg-black text-white dark:bg-white dark:text-black px-4 py-1.5 text-base logo-font hover:opacity-80 transition-opacity"
           >
-            Twitter X
+            Twitter
           </a>
           <a
             href="https://www.linkedin.com/in/waahguptaji"

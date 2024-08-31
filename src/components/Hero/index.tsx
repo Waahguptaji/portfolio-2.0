@@ -20,7 +20,7 @@ const Hero = () => {
     <AnimatedSectionWrapper id="Home">
       <section
         id="hero"
-        className=" flex flex-col gap-16 mb-16 mt-20 md:mt-0  "
+        className=" flex flex-col gap-16 mb-16 mt-16 md:mt-0  "
       >
         <div className="flex items-center ml-0 md:my-5  md:ml-10 ">
           <Image

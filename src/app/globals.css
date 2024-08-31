@@ -30,7 +30,7 @@ body {
 .icon-container {
   display: inline-flex;
   padding: 12px;
-  font-size: 20px;
+  /* font-size: 20px; */
   background-color: #f3f4f6;
   border-radius: 8px;
   text-decoration: none;
