@@ -2,6 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { RoughNotation } from "react-rough-notation";
+import { motion } from "framer-motion";
 import AnimatedSectionWrapper from "@/components/AnimatedSectionWrapper";
 import Footer from "@/components/Footer";
 
@@ -21,6 +22,16 @@ const WorkEx = () => {
     {
       id: 1,
       role: "Software Engineer",
+      company: "Tata Consultancy Services",
+      sdate: "November 2024",
+      edate: "Current",
+      bgColor: "bg-pink-200 dark:bg-pink-400",
+      borderColor: "border-pink-300 dark:border-pink-500",
+      description: "Coming Soon....",
+    },
+    {
+      id: 2,
+      role: "Software Engineer",
       company: "American Chase",
       sdate: "Jan 2024",
       edate: "July 2024",
@@ -30,7 +41,7 @@ const WorkEx = () => {
         "Developed and maintained a web application using React, TypeScript, Redux Toolkit, and Tailwind CSS.",
     },
     {
-      id: 2,
+      id: 3,
       role: "Frontend Developer Intern",
       company: "Pixel Technology",
       sdate: "Sep 2023",
@@ -40,24 +51,14 @@ const WorkEx = () => {
       description:
         "Worked on a project using React, JavaScript, DaisyUI, and SCSS. Developed and optimized user interfaces for responsiveness and performance.",
     },
-    {
-      id: 3,
-      role: "Software Engineer",
-      company: "SASS Startup",
-      sdate: "20, April 2022",
-      edate: "20, April 2023",
-      bgColor: "bg-pink-200 dark:bg-pink-400",
-      borderColor: "border-pink-300 dark:border-pink-500",
-      description: "Worked on a design system at Material 3 designs.",
-    },
   ];
 
   return (
     <>
       <AnimatedSectionWrapper id="Experience">
-        <section className="flex flex-col md:flex-row justify-between px-4 md:ml-10 mb-10">
+        <section className="flex flex-col md:flex-row justify-between px-4 md:px-10 mb-10">
           <div className="space-y-4 my-12 md:my-36 dark:text-white">
-            <div className="text-2xl logo-font inline-block mb-4">
+            <div className="text-black dark:text-white text-2xl logo-font inline-block mb-4">
               <RoughNotation
                 type="highlight"
                 strokeWidth={3}
@@ -88,11 +89,11 @@ const WorkEx = () => {
             </p>
           </div>
 
-          <div className="relative max-w-3xl w-full md:p-6">
+          <div className="relative max-w-3xl w-full md:p-6 overflow-hidden">
             <div className="absolute top-10 left-0 w-full h-[2px] bg-black dark:bg-white"></div>
             <div className="absolute top-0 left-4 md:left-10 w-[2px] h-full bg-black dark:bg-white"></div>
 
-            <div className="md:mx-[90px] my-10 py-[50px] w-full">
+            <div className="md:px-[50px] my-10 py-[50px] w-full">
               {experiences.map(
                 ({
                   id,
@@ -104,27 +105,30 @@ const WorkEx = () => {
                   description,
                   borderColor,
                 }) => (
-                  <div
+                  <motion.div
                     key={id}
-                    className="flex gap-4 p-6 md:flex-row items-start md:items-center mb-8 md:mb-6"
+                    className="flex gap-4 px-4 py-6 md:flex-row items-start md:items-center mb-8 md:mb-6"
+                    initial={{ opacity: 0, y: 50 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: id * 0.3 }}
                   >
                     <div
-                      className={`flex-shrink-0 w-10 h-10 md:w-20 md:h-20 ${bgColor} rounded-lg flex items-center justify-center text-2xl md:text-5xl text-center logo-font border-2 ${borderColor} mb-2 md:mb-0`}
+                      className={`flex-shrink-0 w-10 h-10 md:w-16 md:h-16 ${bgColor} rounded-lg flex items-center justify-center text-black text-xl md:text-3xl text-center logo-font border-2 ${borderColor} mb-2 md:mb-0 dark:text-white`}
                     >
                       {id}
                     </div>
-                    <div className="md:ml-6">
-                      <h3 className="font-normal text-base md:text-xl text-black dark:text-white">
+                    <div className="md:ml-4">
+                      <h3 className="font-normal text-base md:text-lg text-black dark:text-white">
                         {role} at <span className="font-bold">{company}</span>
                       </h3>
-                      <p className="font-light text-sm md:text-base text-gray-800 dark:text-gray-200 mt-1 md:mt-0">
+                      <p className="font-light text-sm md:text-base text-gray-800 dark:text-gray-200 mt-1">
                         {description}
                       </p>
-                      <p className="text-gray-500 dark:text-gray-400 font-medium text-xs md:text-sm mt-1 md:mt-0">
+                      <p className="text-gray-500 dark:text-gray-400 font-medium text-xs md:text-sm mt-1">
                         {sdate} - {edate}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
                 )
               )}
             </div>

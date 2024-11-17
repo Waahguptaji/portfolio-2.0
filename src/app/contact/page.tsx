@@ -30,9 +30,9 @@ const ContactMe = () => {
 
   return (
     <AnimatedSectionWrapper id="Contact">
-      <div className="md:min-h-screen flex flex-col gap-20 mb-12 md:grid md:grid-cols-2 justify-between md:ml-10 w-full">
-        <div className="space-y-4 mt-12 md:my-20">
-          <div className="text-2xl logo-font inline-block mb-4 text-black dark:text-white">
+      <div className="md:min-h-screen flex flex-col md:flex-row md:justify-between md:items-center gap-10 px-4 md:px-10 mb-12 w-full">
+        <div className="flex-1 space-y-4 mt-12 md:mt-0">
+          <div className="text-2xl logo-font mb-4 text-black dark:text-white">
             <RoughNotation
               type="highlight"
               strokeWidth={3}
@@ -58,19 +58,19 @@ const ContactMe = () => {
               className="transform rotate-[230deg] mb-8 relative left-20 hidden dark:block"
             />
           </div>
-          <p className="my-6 text-gray-600 dark:text-gray-300 max-w-xs">
+          <p className="mb-6 text-gray-600 dark:text-gray-300 max-w-xs">
             Have a project idea? <br />
             or just say{" "}
             <span className="font-bold text-black dark:text-white">Hi.</span>
           </p>
         </div>
 
-        <div className="flex-1 max-w-3xl">
-          <form className="flex flex-col gap-8 space-y-4">
+        <div className="flex-1 mt-12 md:mt-0">
+          <form className="flex flex-col gap-8 w-full">
             {fields.map(({ id, label, placeholder, bgColor }) => (
               <motion.div
                 key={id}
-                className="flex items-center gap-2 md:gap-4 logo-font"
+                className="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4 logo-font"
                 whileHover={{ scale: 1.02 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
@@ -82,7 +82,7 @@ const ContactMe = () => {
                 <input
                   type="text"
                   id={id}
-                  className="border-b-2 border-black dark:border-gray-400 w-full md:w-3/4 px-2 text-base md:text-lg outline-none bg-transparent text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200 focus:border-blue-500 focus:outline-none"
+                  className="border-b-2 border-black dark:border-gray-400 w-full px-2 text-base md:text-lg outline-none bg-transparent text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200 focus:border-blue-500"
                   placeholder={placeholder}
                 />
               </motion.div>

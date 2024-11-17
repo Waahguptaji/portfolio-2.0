@@ -112,7 +112,7 @@ const Hero = () => {
               >
                 React
               </RoughNotation>{" "}
-              and{" "}
+              and,{" "}
               <RoughNotation
                 animationDelay={3500}
                 type="box"
@@ -123,7 +123,7 @@ const Hero = () => {
               >
                 Next.js
               </RoughNotation>
-              , I craft engaging,{" "}
+              I craft engaging,{" "}
               <RoughNotation
                 animationDelay={3900}
                 type="underline"
@@ -136,7 +136,13 @@ const Hero = () => {
               </RoughNotation>{" "}
               websites and web applications.
             </p>
-            <button className="mb-5 bg-black dark:bg-white dark:text-black btn btn-neutral w-40 rounded-none text-white">
+            <button
+              onClick={() =>
+                (window.location.href =
+                  "mailto:your-email@example.com?subject=Hey%20I%20want%20to%20connect%20with%20you&body=Hey%20I%20want%20to%20connect%20with%20you!!")
+              }
+              className="mb-5 bg-black dark:bg-white dark:text-black btn btn-neutral w-40 rounded-none text-white"
+            >
               Hire me
             </button>
             <SocialIcons />

@@ -19,7 +19,7 @@ const Footer = () => {
           height={29}
           className="hidden dark:block"
         />
-        <span className="logo-font text-base md:text-xl dark:text-white">
+        <span className=" text-black logo-font text-base md:text-xl dark:text-white">
           sahil
         </span>
       </div>

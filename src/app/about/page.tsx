@@ -12,7 +12,7 @@ const AboutMe = () => {
     <AnimatedSectionWrapper id="About">
       <div className="min-h-screen grid grid-cols-1 md:grid-cols-2 justify-between md:ml-10 w-full">
         <div className="space-y-4 my-12 ">
-          <div className="text-2xl logo-font inline-block mb-4">
+          <div className="text-black dark:text-white text-2xl logo-font inline-block mb-4">
             <RoughNotation
               type="highlight"
               strokeWidth={3}

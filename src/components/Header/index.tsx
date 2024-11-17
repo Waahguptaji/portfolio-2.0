@@ -95,7 +95,12 @@ const Header = () => {
           >
             Resume
           </button>
-          <button className="btn bg-transparent border-solid border-black dark:border-white text-base text-black dark:text-white">
+          <button
+            onClick={() =>
+              (window.location.href = "https://cal.com/waahguptaji")
+            }
+            className="btn bg-transparent border-solid border-black dark:border-white text-base text-black dark:text-white"
+          >
             Schedule a Meeting
           </button>
         </div>
@@ -154,7 +159,12 @@ const Header = () => {
             >
               Resume
             </button>
-            <button className="btn bg-transparent border-solid border-black dark:border-white text-base text-black dark:text-white">
+            <button
+              onClick={() =>
+                (window.location.href = "https://cal.com/waahguptaji")
+              }
+              className="btn bg-transparent border-solid border-black dark:border-white text-base text-black dark:text-white"
+            >
               Schedule a Meeting
             </button>
           </div>
