@@ -1,6 +1,9 @@
-const withMDX = require("@next/mdx")();
+import withMDX from "@next/mdx";
 
 /** @type {import('next').NextConfig} */
-const nextConfig = { pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"] };
+const nextConfig = {
+  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+};
 
-module.exports = withMDX(nextConfig);
+// Export the config using ES Modules syntax
+export default withMDX()(nextConfig);
