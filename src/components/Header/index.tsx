@@ -90,7 +90,7 @@ const Header = () => {
           <button
             className="btn bg-transparent border-solid border-black dark:border-white text-base text-black dark:text-white"
             onClick={() =>
-              window.open("/assets/resume.pdf", "_blank", "noopener noreferrer")
+              window.open("/assets/Resume.pdf", "_blank", "noopener noreferrer")
             }
           >
             Resume
