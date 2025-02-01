@@ -11,7 +11,14 @@ const {
 module.exports = {
   content: ["./src/**/*.{ts,tsx}"],
   darkMode: "class",
-  theme: {},
+  theme: {
+    extend: {
+      animation: {
+        marquee: "scroll 25s linear infinite",
+        "marquee-reverse": "scroll 25s linear infinite reverse",
+      },
+    },
+  },
   plugins: [
     addVariablesForColors,
     require("daisyui"),

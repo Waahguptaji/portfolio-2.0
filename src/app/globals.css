@@ -46,3 +46,19 @@ body {
   color: #4b5563; /* Dark grey on hover */
   background-color: #e5e7eb; /* Slightly darker grey on hover */
 }
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee {
+  animation: marquee 20s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
