@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { RoughNotation } from "react-rough-notation";
 import AnimatedSectionWrapper from "../AnimatedSectionWrapper";
-import SocialIcons from "../SocialIcons";
+import Button from "../ui/Button";
+import SocialButton from "../ui/SocialButton";
 
 const Hero = () => {
   const [isStruckThrough, setIsStruckThrough] = useState(false);
@@ -136,16 +137,17 @@ const Hero = () => {
               </RoughNotation>{" "}
               websites and web applications.
             </p>
-            <button
+            <Button
+              variant="solid"
+              className="mb-5 w-40" // You can still add custom classes
               onClick={() =>
                 (window.location.href =
-                  "mailto:your-email@example.com?subject=Hey%20I%20want%20to%20connect%20with%20you&body=Hey%20I%20want%20to%20connect%20with%20you!!")
+                  "mailto:sahil.work742@gmail.com?subject=Hey%20I%20want%20to%20connect%20with%20you")
               }
-              className="mb-5 bg-black dark:bg-white dark:text-black btn btn-neutral w-40 rounded-none text-white"
             >
               Hire me
-            </button>
-            <SocialIcons />
+            </Button>
+            <SocialButton />
           </div>
         </div>
       </section>
