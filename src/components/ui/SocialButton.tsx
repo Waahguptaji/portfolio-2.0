@@ -38,7 +38,7 @@ const socialLinks = [
   },
 ];
 
-const SocialIcons = () => {
+const SocialButton = () => {
   return (
     <div className="flex gap-3">
       {socialLinks.map((social, index) => (
@@ -56,4 +56,4 @@ const SocialIcons = () => {
   );
 };
 
-export default SocialIcons;
+export default SocialButton;

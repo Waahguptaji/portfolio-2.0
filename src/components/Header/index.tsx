@@ -6,31 +6,84 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import ThemeToggle from "../ThemeToggler";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import Button from "../ui/Button";
 
-const sections = ["Home"]; // Sections on the current page
-const pages = ["About", "Experience", "Blogs", "Contact"]; // Other pages
+// 1. Centralize navigation data
+const navItems = [
+  { label: "Home", href: "/#Home", type: "section" },
+  { label: "About", href: "/about", type: "page" },
+  { label: "Experience", href: "/experience", type: "page" },
+  { label: "Blogs", href: "/blogs", type: "page" },
+  { label: "Contact", href: "/contact", type: "page" },
+];
 
 const Header = () => {
-  const [active, setActive] = useState(" ");
-  const [menuOpen, setMenuOpen] = useState(false); // State to handle mobile menu toggle
+  const [active, setActive] = useState("Home");
+  const [menuOpen, setMenuOpen] = useState(false);
   const router = useRouter();
 
-  const handleSetActive = (section: string) => {
-    setActive(section);
-    if (sections.includes(section)) {
-      router.push(`/#${section}`, { scroll: false });
-      const element = document.getElementById(section);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      router.push(`/${section.toLowerCase()}`);
-    }
-    setMenuOpen(false); // Close the menu when a link is clicked
+  const handleSetActive = (item: {
+    label: string;
+    href: string;
+    type: string;
+  }) => {
+    setActive(item.label);
+    router.push(item.href);
+    setMenuOpen(false); // Close menu on any navigation
   };
+
+  // 2. Create a reusable component for Navigation Links
+  const NavLinks = ({ isMobile = false }) => (
+    <>
+      {navItems.map((item) => (
+        <Link
+          key={item.label}
+          href={item.href}
+          className={`font-semibold cursor-pointer text-black dark:text-white ${
+            isMobile ? "text-lg" : "text-base"
+          }`}
+          onClick={(e) => {
+            e.preventDefault();
+            handleSetActive(item);
+          }}
+          aria-current={active === item.label ? "page" : undefined}
+        >
+          <RoughNotation
+            type="underline"
+            show={active === item.label}
+            color="var(--highlight-color)"
+            strokeWidth={3}
+          >
+            {item.label}
+          </RoughNotation>
+        </Link>
+      ))}
+    </>
+  );
+
+  // 3. Create a reusable component for Action Buttons
+  const ActionButtons = () => (
+    <>
+      <Button
+        variant="outline"
+        onClick={() =>
+          window.open("/assets/Resume.pdf", "_blank", "noopener noreferrer")
+        }
+      >
+        Resume
+      </Button>
+      <Button
+        variant="outline"
+        onClick={() => (window.location.href = "https://cal.com/waahguptaji")}
+      >
+        Schedule a Meeting
+      </Button>
+    </>
+  );
 
   return (
     <header className="flex items-center justify-between w-full py-4 md:p-4 md:flex-grow md:px-10 md:py-6 ">
+      {/* Logo */}
       <div className="flex items-center gap-3">
         <Image
           src="/assets/logo.png"
@@ -53,32 +106,8 @@ const Header = () => {
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex md:w-full md:justify-center md:ml-40">
-        <nav className="flex gap-8 ">
-          {[...sections, ...pages].map((section) => (
-            <Link
-              key={section}
-              href={
-                sections.includes(section)
-                  ? `/#${section}`
-                  : `/${section.toLowerCase()}`
-              }
-              className="font-semibold text-base cursor-pointer text-black dark:text-white"
-              onClick={(e) => {
-                e.preventDefault();
-                handleSetActive(section);
-              }}
-              aria-current={active === section ? "page" : undefined}
-            >
-              <RoughNotation
-                type="underline"
-                show={active === section}
-                color="var(--highlight-color)"
-                strokeWidth={3}
-              >
-                {section}
-              </RoughNotation>
-            </Link>
-          ))}
+        <nav className="flex gap-8">
+          <NavLinks />
         </nav>
       </div>
 
@@ -87,28 +116,13 @@ const Header = () => {
 
         {/* Desktop Buttons */}
         <div className="hidden md:flex items-center gap-2">
-          <button
-            className="btn bg-transparent border-solid border-black dark:border-white text-base text-black dark:text-white"
-            onClick={() =>
-              window.open("/assets/Resume.pdf", "_blank", "noopener noreferrer")
-            }
-          >
-            Resume
-          </button>
-          <button
-            onClick={() =>
-              (window.location.href = "https://cal.com/waahguptaji")
-            }
-            className="btn bg-transparent border-solid border-black dark:border-white text-base text-black dark:text-white"
-          >
-            Schedule a Meeting
-          </button>
+          <ActionButtons />
         </div>
 
         {/* Mobile Hamburger Menu */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="focus:outline-none md:hidden"
+          className="focus:outline-none md:hidden text-black dark:text-white"
         >
           {menuOpen ? (
             <AiOutlineClose size={24} />
@@ -120,53 +134,10 @@ const Header = () => {
 
       {/* Mobile Navigation Menu */}
       {menuOpen && (
-        <nav className="absolute top-16 left-0 right-0 bg-white dark:bg-gray-900 p-4 flex flex-col items-center gap-4 md:hidden shadow-lg z-20">
-          {[...sections, ...pages].map((section) => (
-            <Link
-              key={section}
-              href={
-                sections.includes(section)
-                  ? `/#${section}`
-                  : `/${section.toLowerCase()}`
-              }
-              className="font-semibold text-lg cursor-pointer text-black dark:text-white"
-              onClick={(e) => {
-                e.preventDefault();
-                handleSetActive(section);
-              }}
-              aria-current={active === section ? "page" : undefined}
-            >
-              <RoughNotation
-                type="underline"
-                show={active === section}
-                color="var(--highlight-color)"
-                strokeWidth={3}
-              >
-                {section}
-              </RoughNotation>
-            </Link>
-          ))}
-          <div className="flex flex-col gap-2 mt-4">
-            <button
-              className="btn bg-transparent border-solid border-black dark:border-white text-base text-black dark:text-white"
-              onClick={() =>
-                window.open(
-                  "/assets/Resume.pdf",
-                  "_blank",
-                  "noopener noreferrer"
-                )
-              }
-            >
-              Resume
-            </button>
-            <button
-              onClick={() =>
-                (window.location.href = "https://cal.com/waahguptaji")
-              }
-              className="btn bg-transparent border-solid border-black dark:border-white text-base text-black dark:text-white"
-            >
-              Schedule a Meeting
-            </button>
+        <nav className="absolute top-20 left-0 right-0 bg-white dark:bg-gray-900 p-4 flex flex-col items-center gap-4 md:hidden shadow-lg z-20">
+          <NavLinks isMobile={true} />
+          <div className="flex flex-col items-center gap-2 mt-4">
+            <ActionButtons />
           </div>
         </nav>
       )}

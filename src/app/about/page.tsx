@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 import AnimatedSectionWrapper from "@/components/AnimatedSectionWrapper";
-import SocialIcons from "@/components/SocialIcons";
+import SocialIcons from "@/components/ui/SocialButton";
 import { motion } from "framer-motion";
 import Footer from "@/components/Footer";
 
