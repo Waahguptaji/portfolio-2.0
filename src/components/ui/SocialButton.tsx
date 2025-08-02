@@ -47,7 +47,7 @@ const SocialButton = () => {
           href={social.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="icon-container text-sm md:text-2xl   text-gray-300 hover:text-white transition-colors duration-200"
+          className="icon-container text-sm md:text-2xl   text-gray-300 dark:text-white transition-colors duration-200"
         >
           {social.icon}
         </a>
