@@ -24,8 +24,8 @@ export default function RootLayout({
     <html lang="en" className="h-full" suppressHydrationWarning>
       <body className={`${inter.className} h-full`}>
         <Providers>
-          <div className="min-h-screen w-full dark:bg-black bg-white dark:bg-dot-white/[0.4] bg-dot-black/[0.4] relative flex flex-col items-center">
-            <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+          <div className="min-h-screen w-full dark:bg-slate-900 bg-white dark:bg-dot-slate-300/[0.2] bg-dot-black/[0.4] relative flex flex-col items-center">
+            <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-slate-900/80 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
             {/* Centered Container */}
             <div className="w-full max-w-5xl mx-auto px-6 md:px-8">

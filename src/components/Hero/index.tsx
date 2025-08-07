@@ -39,7 +39,7 @@ const Hero = () => {
     <AnimatedSectionWrapper id="Home">
       <section
         id="hero"
-        className="h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8"
+        className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 pt-20"
       >
         <div className="max-w-7xl mx-auto w-full">
           {/* Top section with avatar */}

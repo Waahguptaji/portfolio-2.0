@@ -8,7 +8,6 @@ import ThemeToggle from "../ThemeToggler";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import Button from "../ui/Button";
 
-// 1. Centralize navigation data
 const navItems = [
   { label: "Home", href: "/#Home", type: "section" },
   { label: "About", href: "/about", type: "page" },
@@ -29,10 +28,9 @@ const Header = () => {
   }) => {
     setActive(item.label);
     router.push(item.href);
-    setMenuOpen(false); // Close menu on any navigation
+    setMenuOpen(false);
   };
 
-  // 2. Create a reusable component for Navigation Links
   const NavLinks = ({ isMobile = false }) => (
     <>
       {navItems.map((item) => (
@@ -61,87 +59,88 @@ const Header = () => {
     </>
   );
 
-  // 3. Create a reusable component for Action Buttons
-  const ActionButtons = () => (
-    <>
-      <Button
-        variant="outline"
-        onClick={() =>
-          window.open("/assets/Resume.pdf", "_blank", "noopener noreferrer")
-        }
-      >
-        Resume
-      </Button>
-      <Button
-        variant="outline"
-        onClick={() => (window.location.href = "https://cal.com/waahguptaji")}
-      >
-        Schedule a Meeting
-      </Button>
-    </>
-  );
-
   return (
-    <header className="flex items-center justify-between w-full py-4 md:p-4 md:flex-grow md:px-10 md:py-6 ">
-      {/* Logo */}
-      <div className="flex items-center gap-3">
-        <Image
-          src="/assets/logo.png"
-          alt="logo"
-          width={25}
-          height={29}
-          className="block dark:hidden"
-        />
-        <Image
-          src="/assets/dark/darkLogo.png"
-          alt="logo"
-          width={25}
-          height={29}
-          className="hidden dark:block"
-        />
-        <span className="text-black dark:text-white logo-font text-2xl">
-          sahil
-        </span>
-      </div>
-
-      {/* Desktop Navigation */}
-      <div className="hidden md:flex md:w-full md:justify-center md:ml-40">
-        <nav className="flex gap-8">
-          <NavLinks />
-        </nav>
-      </div>
-
-      <div className="flex items-center gap-6">
-        <ThemeToggle />
-
-        {/* Desktop Buttons */}
-        <div className="hidden md:flex items-center gap-2">
-          <ActionButtons />
-        </div>
-
-        {/* Mobile Hamburger Menu */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="focus:outline-none md:hidden text-black dark:text-white"
-        >
-          {menuOpen ? (
-            <AiOutlineClose size={24} />
-          ) : (
-            <AiOutlineMenu size={24} />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Navigation Menu */}
-      {menuOpen && (
-        <nav className="absolute top-20 left-0 right-0 bg-white dark:bg-gray-900 p-4 flex flex-col items-center gap-4 md:hidden shadow-lg z-20">
-          <NavLinks isMobile={true} />
-          <div className="flex flex-col items-center gap-2 mt-4">
-            <ActionButtons />
+    // In your Header component
+    <div className="sticky top-0 bg-white/90 dark:bg-slate-900/95   backdrop-blur-xl z-50 border-b border-gray-200/30 dark:border-slate-600/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="flex items-center justify-between w-full py-4 min-w-0">
+          {/* Logo */}
+          <div className="flex items-center gap-3 flex-shrink-0">
+            <Image
+              src="/assets/logo.png"
+              alt="logo"
+              width={25}
+              height={29}
+              className="block dark:hidden"
+            />
+            <Image
+              src="/assets/dark/darkLogo.png"
+              alt="logo"
+              width={25}
+              height={29}
+              className="hidden dark:block"
+            />
+            <span className="text-black dark:text-white logo-font text-2xl">
+              sahil
+            </span>
           </div>
-        </nav>
-      )}
-    </header>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex flex-1 justify-center min-w-0">
+            <nav className="flex gap-8">
+              <NavLinks />
+            </nav>
+          </div>
+
+          {/* Desktop Right Section */}
+          <div className="hidden md:flex items-center gap-4 flex-shrink-0">
+            <ThemeToggle />
+            <Button
+              variant="outline"
+              className="text-sm px-3 py-2"
+              onClick={() =>
+                (window.location.href = "https://cal.com/waahguptaji")
+              }
+            >
+              Book Call
+            </Button>
+          </div>
+
+          {/* Mobile Right Section */}
+          <div className="flex md:hidden items-center gap-4 flex-shrink-0">
+            <ThemeToggle />
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="focus:outline-none text-black dark:text-white"
+            >
+              {menuOpen ? (
+                <AiOutlineClose size={24} />
+              ) : (
+                <AiOutlineMenu size={24} />
+              )}
+            </button>
+          </div>
+        </header>
+
+        {/* Mobile Navigation Menu */}
+        {menuOpen && (
+          <nav className="md:hidden bg-white dark:bg-gray-900 px-4 pb-4 border-b border-gray-200 dark:border-gray-700">
+            <div className="flex flex-col items-center gap-4 py-4">
+              <NavLinks isMobile={true} />
+              <Button
+                variant="outline"
+                onClick={() => {
+                  window.location.href = "https://cal.com/waahguptaji";
+                  setMenuOpen(false);
+                }}
+              >
+                Book Call
+              </Button>
+            </div>
+          </nav>
+        )}
+      </div>
+    </div>
   );
 };
 
