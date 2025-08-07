@@ -39,11 +39,11 @@ const Hero = () => {
     <AnimatedSectionWrapper id="Home">
       <section
         id="hero"
-        className="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 pt-20"
+        className="h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 -mt-20 pt-20"
       >
         <div className="max-w-7xl mx-auto w-full">
           {/* Top section with avatar */}
-          <div className="flex items-center justify-center md:justify-start mb-10">
+          <div className="flex items-center justify-center md:justify-start mb-5 md:mb-10">
             <Image
               src="/assets/profile.png"
               alt="Avatar"
@@ -79,7 +79,7 @@ const Hero = () => {
             </span>
           </div>
 
-          <div className="flex flex-col md:flex-row items-center lg:gap-16">
+          <div className="flex flex-col md:flex-row items-center  lg:gap-16">
             {/* Left side: Main heading */}
             <div className="flex-1 text-4xl text-center md:text-left md:text-6xl font-semibold leading-tight text-black dark:text-white">
               I{" "}
@@ -138,7 +138,7 @@ const Hero = () => {
             </div>
 
             {/* Right side: Bio and CTAs */}
-            <div className="flex-1 flex flex-col items-center md:items-start gap-6 max-w-xl">
+            <div className="flex-1 flex flex-col items-center md:items-start gap-4 md:gap-6 max-w-xl">
               <p className="text-lg text-center md:text-left md:text-xl max-w-lg text-black dark:text-white font-light">
                 As a{" "}
                 <strong className="font-semibold">Full Stack Developer</strong>,
